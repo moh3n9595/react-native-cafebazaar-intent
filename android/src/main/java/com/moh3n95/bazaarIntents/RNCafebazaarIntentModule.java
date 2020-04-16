@@ -13,7 +13,7 @@ public class RNCafebazaarIntent extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
 
-  public RNReactNativeCafebazaarIntentModule(ReactApplicationContext reactContext) {
+  public RNCafebazaarIntentModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
   }
