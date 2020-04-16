@@ -3,8 +3,8 @@ import { NativeModules } from "react-native";
 export function rate(packageName) {
     logIOS();
     if(Platform.OS === "android") {
-        const { RNReactNativeCafebazaarIntent } = NativeModules;
-        RNReactNativeCafebazaarIntent.rate(packageName);
+        const { RNCafebazaarIntent } = NativeModules;
+        RNCafebazaarIntent.rate(packageName);
     }
 }
 
@@ -12,9 +12,9 @@ export function view(packageName) {
     logIOS();
     if (Platform.OS === "android") {
         const {
-            RNReactNativeCafebazaarIntent
+            RNCafebazaarIntent
         } = NativeModules;
-        RNReactNativeCafebazaarIntent.rate(packageName);
+        RNCafebazaarIntent.rate(packageName);
     }
 }
 
@@ -22,9 +22,9 @@ export function login() {
     logIOS();
     if (Platform.OS === "android") {
         const {
-            RNReactNativeCafebazaarIntent
+            RNCafebazaarIntent
         } = NativeModules;
-        RNReactNativeCafebazaarIntent.login();
+        RNCafebazaarIntent.login();
     }
 }
 
@@ -32,9 +32,9 @@ export function developerCollection(developerId) {
     logIOS();
     if (Platform.OS === "android") {
         const {
-            RNReactNativeCafebazaarIntent
+            RNCafebazaarIntent
         } = NativeModules;
-        RNReactNativeCafebazaarIntent.developerCollection(developerId);
+        RNCafebazaarIntent.developerCollection(developerId);
     }
 }
 

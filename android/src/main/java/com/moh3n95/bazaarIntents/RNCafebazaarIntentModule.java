@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.content.Context;
 
-public class RNReactNativeCafebazaarIntentModule extends ReactContextBaseJavaModule {
+public class RNCafebazaarIntent extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
 
@@ -20,7 +20,7 @@ public class RNReactNativeCafebazaarIntentModule extends ReactContextBaseJavaMod
 
   @Override
   public String getName() {
-    return "RNReactNativeCafebazaarIntent";
+    return "RNCafebazaarIntent";
   }
 
   @ReactMethod

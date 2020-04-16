@@ -19,32 +19,32 @@
 
 ## Getting started
 
-`$ npm i react-native-react-native-cafebazaar-intent`
+`$ npm i react-native-cafebazaar-intent`
 
 ### Mostly automatic installation (RN < 60)
 
-`$ react-native link react-native-react-native-cafebazaar-intent`
+`$ react-native link react-native-cafebazaar-intent`
 
 ### Manual installation (RN < 60)
 
 #### Android
 
 1. Open up `android/app/src/main/java/com/moh3n95/bazaarIntents/MainActivity.java`
-  - Add `import com.moh3n95.bazaarIntents.RNReactNativeCafebazaarIntentPackage;` to the imports at the top of the file
-  - Add `new RNReactNativeCafebazaarIntentPackage()` to the list returned by the `getPackages()` method
+  - Add `import com.moh3n95.bazaarIntents.RNCafebazaarIntentPackage;` to the imports at the top of the file
+  - Add `new RNCafebazaarIntentPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-react-native-cafebazaar-intent'
-  	project(':react-native-react-native-cafebazaar-intent').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-react-native-cafebazaar-intent/android')
+  	include ':react-native-cafebazaar-intent'
+  	project(':react-native-cafebazaar-intent').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-cafebazaar-intent/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-react-native-cafebazaar-intent')
+      compile project(':react-native-cafebazaar-intent')
   	```
 
 ## Usage
 ```javascript
-import {view, rate, login, developerCollection} from 'react-native-react-native-cafebazaar-intent';
+import {view, rate, login, developerCollection} from 'react-native-cafebazaar-intent';
 
 view("YOUR_APP_PACKAGE_NAME");
 
