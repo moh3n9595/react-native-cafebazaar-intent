@@ -1,7 +1,6 @@
-
 {
   "name": "react-native-cafebazaar-intent",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Bazaar Intent for various purposes",
   "main": "index.js",
   "scripts": {

@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.content.Context;
 
-public class RNCafebazaarIntent extends ReactContextBaseJavaModule {
+public class RNCafebazaarIntentModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
 
