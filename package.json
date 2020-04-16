@@ -1,0 +1,30 @@
+
+{
+  "name": "react-native-cafebazaar-intent",
+  "version": "1.0.0",
+  "description": "Bazaar Intent for various purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "cafebazaar",
+    "intent",
+    "js"
+  ],
+  "author": {
+    "name": "Mohsen Madani",
+    "email": "mohsenando@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moh3n9595/react-native-cafebazaar-intent.git"
+  },
+  "homepage": "https://github.com/moh3n9595/react-native-cafebazaar-intent#readme",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "^0.41.2"
+  }
+}
