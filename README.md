@@ -46,13 +46,21 @@
 ```javascript
 import {view, rate, login, developerCollection} from 'react-native-cafebazaar-intent';
 
-view("YOUR_APP_PACKAGE_NAME");
+view("YOUR_APP_PACKAGE_NAME")
+  .then(() => console.log('OK'))
+  .catch((e) => console.log(e));
 
-rate("YOUR_APP_PACKAGE_NAME");
+rate("YOUR_APP_PACKAGE_NAME")
+  .then(() => console.log('OK'))
+  .catch((e) => console.log(e));
 
-login();
+login()
+  .then(() => console.log('OK'))
+  .catch((e) => console.log(e));
 
-developerCollection("YOUR_DEVELOPER_ID");
+developerCollection("YOUR_DEVELOPER_ID")
+  .then(() => console.log('OK'))
+  .catch((e) => console.log(e));
 
 ```
 

@@ -1,46 +1,55 @@
 import { NativeModules } from "react-native";
 
 export function rate(packageName) {
-    logIOS();
-    if(Platform.OS === "android") {
-        const { RNCafebazaarIntent } = NativeModules;
-        RNCafebazaarIntent.rate(packageName);
-    }
+    return new Promise((resolve, reject) => {
+        logIOS(reject);
+        if (Platform.OS === "android") {
+            const {
+                RNCafebazaarIntent
+            } = NativeModules;
+            RNCafebazaarIntent.rate(packageName).then(() => resolve()).catch(e => reject(e));
+        }
+    });
 }
 
 export function view(packageName) {
-    logIOS();
-    if (Platform.OS === "android") {
-        const {
-            RNCafebazaarIntent
-        } = NativeModules;
-        RNCafebazaarIntent.rate(packageName);
-    }
+    return new Promise((resolve, reject) => {
+        logIOS(reject);
+        if (Platform.OS === "android") {
+            const {
+                RNCafebazaarIntent
+            } = NativeModules;
+            RNCafebazaarIntent.view(packageName).then(() => resolve()).catch(e => reject(e));
+        }
+    });
 }
 
 export function login() {
-    logIOS();
-    if (Platform.OS === "android") {
-        const {
-            RNCafebazaarIntent
-        } = NativeModules;
-        RNCafebazaarIntent.login();
-    }
+    return new Promise((resolve, reject) => {
+        logIOS(reject);
+        if (Platform.OS === "android") {
+            const {
+                RNCafebazaarIntent
+            } = NativeModules;
+            RNCafebazaarIntent.login().then(() => resolve()).catch(e => reject(e));
+        }
+    });
 }
 
 export function developerCollection(developerId) {
-    logIOS();
-    if (Platform.OS === "android") {
-        const {
-            RNCafebazaarIntent
-        } = NativeModules;
-        RNCafebazaarIntent.developerCollection(developerId);
-    }
+    return new Promise((resolve, reject) => {
+        logIOS(reject);
+        if (Platform.OS === "android") {
+            const {
+                RNCafebazaarIntent
+            } = NativeModules;
+            RNCafebazaarIntent.developerCollection(developerId).then(() => resolve()).catch(e => reject(e));
+        }
+    });
 }
 
-function logIOS() {
+function logIOS(reject) {
     if(Platform.OS === "ios") {
-        console.warn("You can't use `react-native-cafebazaar-intent` in ios");
+        reject(new Error("You can't use `react-native-cafebazaar-intent` in ios"))
     }
-        
 }
