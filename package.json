@@ -1,6 +1,6 @@
 {
   "name": "react-native-cafebazaar-intent",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Bazaar Intent for various purposes",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   "homepage": "https://github.com/moh3n9595/react-native-cafebazaar-intent#readme",
   "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.41.2"
+    "react-native": "^0.68.5"
   }
 }
