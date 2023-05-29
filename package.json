@@ -24,6 +24,6 @@
   "homepage": "https://github.com/moh3n9595/react-native-cafebazaar-intent#readme",
   "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.68.5"
+    "react-native": ">= 0.68.5"
   }
 }

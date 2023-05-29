@@ -14,6 +14,7 @@ public class RNCafebazaarIntentModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
   private static final String PACKAGE = "com.farsitel.bazaar";
+  private static final String PACKAGE_MYKET = "ir.mservices.market";
 
   public RNCafebazaarIntentModule(ReactApplicationContext reactContext) {
     super(reactContext);
@@ -26,10 +27,24 @@ public class RNCafebazaarIntentModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void rate(String packageName, Promise promise) {  
+   public void rateMyket(String packageName, Promise promise) {
+     try {
+       Intent intent = new Intent(Intent.ACTION_EDIT);
+       intent.setData(Uri.parse("myket://comment?id=" + packageName));
+       statMyketActivity(intent);
+       promise.resolve(true);
+     }
+     catch (Exception e) {
+       promise.reject(e.getMessage());
+     }
+   }
+
+
+  @ReactMethod
+  public void rate(String packageName, Promise promise) {
     try {
-      Intent intent = new Intent(Intent.ACTION_EDIT); 
-      intent.setData(Uri.parse("bazaar://details?id=" + packageName)); 
+      Intent intent = new Intent(Intent.ACTION_EDIT);
+      intent.setData(Uri.parse("bazaar://details?id=" + packageName));
       statBazaarActivity(intent);
       promise.resolve(true);
     }
@@ -39,10 +54,10 @@ public class RNCafebazaarIntentModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void view(String packageName, Promise promise) {  
+  public void view(String packageName, Promise promise) {
     try {
-      Intent intent = new Intent(Intent.ACTION_VIEW); 
-      intent.setData(Uri.parse("bazaar://details?id=" + packageName)); 
+      Intent intent = new Intent(Intent.ACTION_VIEW);
+      intent.setData(Uri.parse("bazaar://details?id=" + packageName));
       statBazaarActivity(intent);
       promise.resolve(true);
     }
@@ -52,9 +67,9 @@ public class RNCafebazaarIntentModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void login(Promise promise) {  
+  public void login(Promise promise) {
     try {
-      Intent intent = new Intent(Intent.ACTION_VIEW); 
+      Intent intent = new Intent(Intent.ACTION_VIEW);
       intent.setData(Uri.parse("bazaar://login"));
       statBazaarActivity(intent);
       promise.resolve(true);
@@ -65,10 +80,10 @@ public class RNCafebazaarIntentModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void developerCollection(String DEVELOPER_ID, Promise promise) {  
+  public void developerCollection(String DEVELOPER_ID, Promise promise) {
     try {
-      Intent intent = new Intent(Intent.ACTION_VIEW); 
-      intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + DEVELOPER_ID)); 
+      Intent intent = new Intent(Intent.ACTION_VIEW);
+      intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + DEVELOPER_ID));
       statBazaarActivity(intent);
       promise.resolve(true);
     }
@@ -78,9 +93,14 @@ public class RNCafebazaarIntentModule extends ReactContextBaseJavaModule {
   }
 
   private void statBazaarActivity(Intent intent) {
-    intent.setPackage(PACKAGE); 
+    intent.setPackage(PACKAGE);
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    this.reactContext.startActivity(intent); 
+    this.reactContext.startActivity(intent);
+  }
+   private void statMyketActivity(Intent intent) {
+      intent.setPackage(PACKAGE_MYKET);
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      this.reactContext.startActivity(intent);
   }
 
 }
