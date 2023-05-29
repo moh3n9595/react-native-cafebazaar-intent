@@ -53,3 +53,14 @@ function logIOS(reject) {
         reject(new Error("You can't use `react-native-cafebazaar-intent` in ios"))
     }
 }
+export function rateMyket(packageName) {
+    return new Promise((resolve, reject) => {
+        logIOS(reject);
+        if (Platform.OS === "android") {
+            const {
+                RNCafebazaarIntent
+            } = NativeModules;
+            RNCafebazaarIntent.rateMyket(packageName).then(() => resolve()).catch(e => reject(e));
+        }
+    });
+}
