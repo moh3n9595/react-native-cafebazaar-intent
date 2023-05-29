@@ -29,9 +29,11 @@ public class RNCafebazaarIntentModule extends ReactContextBaseJavaModule {
   @ReactMethod
    public void rateMyket(String packageName, Promise promise) {
      try {
-       Intent intent = new Intent(Intent.ACTION_EDIT);
-       intent.setData(Uri.parse("myket://comment?id=" + packageName));
-       statMyketActivity(intent);
+          String url= "myket://comment?id=" + packageName;
+          Intent intent = new Intent();
+          intent.setAction(Intent.ACTION_VIEW);
+          intent.setData(Uri.parse(url));
+          startActivity(intent);
        promise.resolve(true);
      }
      catch (Exception e) {
@@ -97,10 +99,4 @@ public class RNCafebazaarIntentModule extends ReactContextBaseJavaModule {
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     this.reactContext.startActivity(intent);
   }
-   private void statMyketActivity(Intent intent) {
-      intent.setPackage(PACKAGE_MYKET);
-      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-      this.reactContext.startActivity(intent);
-  }
-
 }
